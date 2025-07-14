@@ -16,3 +16,18 @@ sudo apt update
 sudo apt install openjdk-11-jdk
 ```
 Para mayor información puedes recurrir a la [documentación oficial.](https://nifi.apache.org/components/)
+
+### Descarga de Apache Nifi
+Puedes verificar la versión que deseas descargar [aquí.](https://nifi.apache.org/download/)
+* Descarga:
+```
+wget https://dlcdn.apache.org/nifi/2.4.0/nifi-2.4.0-source-release.zip
+```
+* Extraer Nifi
+```
+unzip nifi-2.4.0-source-release.zip
+```
+* Mover el directorio (recomendado)
+```
+mv nifi-2.4.0 /opt/
+```
