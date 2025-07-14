@@ -51,3 +51,20 @@ Puedes acceder a la UI desde [https://localhost:8443/nifi/](https://localhost:84
 Deberías ver algo como esto:
 
 ![log in](./img/00_log-in.png)
+
+Si encuentras algún problema en este paso debería verificar tu puerto por defecto:
+```
+nano /opt/nifi/nifi-2.4.0/conf/nifi.properties
+```
+![](./img/00_port.png)
+
+### Genera tus credenciales
+Si bien Nifi genera unas credenciales por defecto, es buena práctica generar un usuario y contraseñas de acceso unico.
+
+Primero debes detener apache Nifi con el comando descrito mas arriba. Luego debes ejecutar lo siguiente dentro del directorio `opt/nifi/nifi-2.4.0/bin/`:
+```
+./nifi.sh set-single-user-credentials "nuevo_usuario" "nueva_contraseña"
+```
+La contraseña debe tener 12 caracteres como minimo.
+
+Ahora podemos comenzar nuestro proyecto ETL.
