@@ -31,3 +31,15 @@ unzip nifi-2.4.0-source-release.zip
 ```
 mv nifi-2.4.0 /opt/
 ```
+### Iniciar interfaz gráfica de Nifi
+Se debe navegar al directorio *bin* dentro de la carpeta de NiFi y ejecutar el script de inicio
+```
+cd /opt/nifi/nifi-2.4.0/bin
+```
+Dentro de este directorio debes ejecutar:
+
+```./nifi.sh start``` para iniciar nifi
+
+```./nifi.sh stop``` para detener nifi
+
+```./nifi.sh restart``` para reiniciar nifi
