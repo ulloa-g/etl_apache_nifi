@@ -43,3 +43,11 @@ Dentro de este directorio debes ejecutar:
 ```./nifi.sh stop``` para detener nifi
 
 ```./nifi.sh restart``` para reiniciar nifi
+
+### Log in
+
+Puedes acceder a la UI desde [https://localhost:8443/nifi/](https://localhost:8443/nifi/)
+
+Deberías ver algo como esto:
+
+![log in](./img/00_log-in.png)
