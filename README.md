@@ -77,7 +77,7 @@ Arrastrar el icono de "Process Group" y asignar un nombre, luego click en `Add`.
 ![](./img/01_create_process_group.png)
 ![](./img/02_process_group_created.png)
 
-* Fase de extracción: Se utilizará el procesador GetFile para leer archivos del sistema de archivos local. Leeremos el archivo `input/data.csv`.
+* Fase de extracción: Se utilizará el procesador **GetFile** para leer archivos del sistema de archivos local. Leeremos el archivo `input/data.csv`.
 
 Arrastrar el icono de "Processor". En el diálogo "Add Processor", buscar y seleccionar GetFile.
 ![](./img/03_add_GetFile.png)
@@ -96,3 +96,26 @@ En pestaña *"Relationships"*:
 Marcar "success" como "Terminate". Hacer clic en "Apply".
 
 ![](./img/04_add_config.png)
+
+
+* Fase de transformación: Se utilizará el procesador **UpdateAttribute**.
+
+Como ya vimos, arrastra el icono de "Processor". En el diálogo "Add Processor", buscar y seleccionar UpdateAttribute. Crear una conexión entre GetFile -> UpdateAttribute arrastrando la flecha que aparece en GetFile.
+![](./img/05_create_conn.png)
+![](./img/05_config-conn.png)
+
+Ahora haz clic derecho en el procesador UpdateAttribute y selecciona *configure*.
+
+Vamos a añadir `processing_timestamp`. Este atributo capturará la fecha y hora exacta en que el FlowFile pasa por este procesador. Click en el símbolo `+` y darle un nombre y valor. En **value** vamos a escribir la siguiente Expresión del Lenguaje NiFi (NIFEL):
+```
+${now():format("yyyy-MM-dd HH:mm:ss")}
+```
+![](./img/06_config_timestamp.png)
+
+Ahora vamos a añadir el procesador **ReplaceText**. Repetimos los pasos previos para agregarlo y generar la conexión. Luego vamos a configurarlo.
+
+![](./img/07_config_replace_text.png)
+
+Asegurate también de configurar correctamente las relaciones.
+![](./img/07_config_relationship.png)
+
