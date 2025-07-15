@@ -68,3 +68,11 @@ Primero debes detener apache Nifi con el comando descrito mas arriba. Luego debe
 La contraseña debe tener 12 caracteres como minimo.
 
 Ahora podemos comenzar nuestro proyecto ETL.
+
+### Construcción de pipeline ETL
+* Creación de un grupo de procesos: Es una buena práctica encapsular el flujo en un Grupo de Procesos para modularidad y organización.
+
+Arrastrar el icono de "Process Group" y asignar un nombre, luego click en `Add`. Hacer doble clic para entrar en él.
+
+![](./img/01_create_process_group.png)
+![](./img/02_process_group_created.png)
