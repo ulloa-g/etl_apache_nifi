@@ -76,3 +76,23 @@ Arrastrar el icono de "Process Group" y asignar un nombre, luego click en `Add`.
 
 ![](./img/01_create_process_group.png)
 ![](./img/02_process_group_created.png)
+
+* Fase de extracción: Se utilizará el procesador GetFile para leer archivos del sistema de archivos local. Leeremos el archivo `input/data.csv`.
+
+Arrastrar el icono de "Processor". En el diálogo "Add Processor", buscar y seleccionar GetFile.
+![](./img/03_add_GetFile.png)
+
+Hacer clic derecho en el procesador GetFile y seleccionar "Configure".
+![](./img/04_config_processor.png)
+
+En pestaña *"Properties"*: 
+
+Input Directory: Especificar la ruta **a la carpeta** de donde se leera el archivo CSV de entrada.
+
+Keep Source File: Establecer en true si se desea mantener el archivo original.
+
+En pestaña *"Relationships"*: 
+
+Marcar "success" como "Terminate". Hacer clic en "Apply".
+
+![](./img/04_add_config.png)
