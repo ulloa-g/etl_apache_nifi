@@ -133,3 +133,6 @@ Nuestro proceso ETL se ve así desde Apache Nifi:
 
 Y podemos verificar las transformaciones realizadas:
 ![](./img/10_transform_data.png)
+
+Junto con el timestamp que configuramos:
+![](./img/10_attr_modified.png)
