@@ -130,3 +130,6 @@ Configuraciones básicas: En la pestaña **RELATIONSHIPS** asegúrate de que las
 Nuestro proceso ETL se ve así desde Apache Nifi:
 
 ![](./img/09_workflow.png)
+
+Y podemos verificar las transformaciones realizadas:
+![](./img/10_transform_data.png)
