@@ -126,3 +126,7 @@ Ahora procedemos a guardar el archivo transformado en un ```CSV```. Para esto, a
 Configuraciones básicas: En la pestaña **RELATIONSHIPS** asegúrate de que las relaciones Success y Failure estén marcadas para terminate.
 
 ![](./img/08_config_processor.png)
+
+Nuestro proceso ETL se ve así desde Apache Nifi:
+
+![](./img/09_workflow.png)
