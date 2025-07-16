@@ -119,3 +119,10 @@ Ahora vamos a añadir el procesador **ReplaceText**. Repetimos los pasos previos
 Asegurate también de configurar correctamente las relaciones.
 ![](./img/07_config_relationship.png)
 
+Ahora procedemos a guardar el archivo transformado en un ```CSV```. Para esto, arrastra el procesador **PutFile**.
+
+![](./img/08_add_PutFile.png)
+
+Configuraciones básicas: En la pestaña **RELATIONSHIPS** asegúrate de que las relaciones Success y Failure estén marcadas para terminate.
+
+![](./img/08_config_processor.png)
