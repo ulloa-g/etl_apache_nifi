@@ -121,6 +121,8 @@ Asegurate también de configurar correctamente las relaciones.
 
 Ahora vamos a trabajar con el procesador **ExecuteProcess** para correr un script de python y realizar algunas transformaciones adicionales.
 
+
+* Fase de carga: Se utilizará el procesador **PutFile**.
 Ahora procedemos a guardar el archivo transformado en un ```CSV```. Para esto, arrastra el procesador **PutFile**.
 
 ![](./img/08_add_PutFile.png)
@@ -138,4 +140,3 @@ Y podemos verificar las transformaciones realizadas:
 
 Junto con el timestamp que configuramos:
 ![](./img/10_attr_modified.png)
-
