@@ -119,6 +119,8 @@ Ahora vamos a añadir el procesador **ReplaceText**. Repetimos los pasos previos
 Asegurate también de configurar correctamente las relaciones.
 ![](./img/07_config_relationship.png)
 
+Ahora vamos a trabajar con el procesador **ExecuteProcess** para correr un script de python y realizar algunas transformaciones adicionales.
+
 Ahora procedemos a guardar el archivo transformado en un ```CSV```. Para esto, arrastra el procesador **PutFile**.
 
 ![](./img/08_add_PutFile.png)
@@ -136,3 +138,4 @@ Y podemos verificar las transformaciones realizadas:
 
 Junto con el timestamp que configuramos:
 ![](./img/10_attr_modified.png)
+
