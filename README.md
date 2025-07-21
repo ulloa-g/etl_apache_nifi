@@ -119,9 +119,6 @@ Ahora vamos a añadir el procesador **ReplaceText**. Repetimos los pasos previos
 Asegurate también de configurar correctamente las relaciones.
 ![](./img/07_config_relationship.png)
 
-Ahora vamos a trabajar con el procesador **ExecuteProcess** para correr un script de python y realizar algunas transformaciones adicionales.
-
-
 * Fase de carga: Se utilizará el procesador **PutFile**.
 Ahora procedemos a guardar el archivo transformado en un ```CSV```. Para esto, arrastra el procesador **PutFile**.
 
