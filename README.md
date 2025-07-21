@@ -1,9 +1,9 @@
 # Proyecto ETL con Apache Nifi
 
-### Objetivo del proyecto
+## Objetivo del proyecto
 El objetivo principal de este proyecto es demostrar un conocimiento práctico de los componentes y funcionalidades clave de Apache NiFi en el contexto de un pipeline de Extracción, Transformación y Carga (ETL). A través de esta implementación, se busca evidenciar la capacidad de diseñar, construir y operar flujos de datos utilizando esta potente herramienta.
 
-### Requisitos previos del sistema
+## Requisitos previos del sistema
 Java Development Kit (JDK): NiFi requiere Java para funcionar. Es crucial tener la variable de entorno JAVA_HOME configurada correctamente.
 * Comprobación de Java para sistemas Unix:
 ```
@@ -17,7 +17,7 @@ sudo apt install openjdk-11-jdk
 ```
 Para mayor información puedes recurrir a la [documentación oficial.](https://nifi.apache.org/components/)
 
-### Descarga de Apache Nifi
+## Descarga de Apache Nifi
 Puedes verificar la versión que deseas descargar [aquí.](https://nifi.apache.org/download/)
 * Descarga:
 ```
@@ -31,7 +31,7 @@ unzip nifi-2.4.0-source-release.zip
 ```
 mv nifi-2.4.0 /opt/
 ```
-### Iniciar interfaz gráfica de Nifi
+## Iniciar interfaz gráfica de Nifi
 Se debe navegar al directorio *bin* dentro de la carpeta de NiFi y ejecutar el script de inicio
 ```
 cd /opt/nifi/nifi-2.4.0/bin
@@ -44,7 +44,7 @@ Dentro de este directorio debes ejecutar:
 
 ```./nifi.sh restart``` para reiniciar nifi
 
-### Log in
+## Log in
 
 Puedes acceder a la UI desde [https://localhost:8443/nifi/](https://localhost:8443/nifi/)
 
@@ -58,7 +58,7 @@ nano /opt/nifi/nifi-2.4.0/conf/nifi.properties
 ```
 ![](./img/00_port.png)
 
-### Genera tus credenciales
+## Genera tus credenciales
 Si bien Nifi genera unas credenciales por defecto, es buena práctica generar un usuario y contraseñas de acceso unico.
 
 Primero debes detener apache Nifi con el comando descrito mas arriba. Luego debes ejecutar lo siguiente dentro del directorio `opt/nifi/nifi-2.4.0/bin/`:
@@ -69,7 +69,7 @@ La contraseña debe tener 12 caracteres como minimo.
 
 Ahora podemos comenzar nuestro proyecto ETL.
 
-### Construcción de pipeline ETL
+## Construcción de pipeline ETL
 * Creación de un grupo de procesos: Es una buena práctica encapsular el flujo en un Grupo de Procesos para modularidad y organización.
 
 Arrastrar el icono de "Process Group" y asignar un nombre, luego click en `Add`. Hacer doble clic para entrar en él.
@@ -77,7 +77,8 @@ Arrastrar el icono de "Process Group" y asignar un nombre, luego click en `Add`.
 ![](./img/01_create_process_group.png)
 ![](./img/02_process_group_created.png)
 
-* Fase de extracción: Se utilizará el procesador **GetFile** para leer archivos del sistema de archivos local. Leeremos el archivo `input/data.csv`.
+### Fase de extracción
+Se utilizará el procesador **GetFile** para leer archivos del sistema de archivos local. Leeremos el archivo `input/data.csv`.
 
 Arrastrar el icono de "Processor". En el diálogo "Add Processor", buscar y seleccionar GetFile.
 ![](./img/03_add_GetFile.png)
@@ -97,8 +98,8 @@ Marcar "success" como "Terminate". Hacer clic en "Apply".
 
 ![](./img/04_add_config.png)
 
-
-* Fase de transformación: Se utilizará el procesador **UpdateAttribute**.
+### Fase de transformación
+Comenzamos con el procesador **UpdateAttribute**.
 
 Como ya vimos, arrastra el icono de "Processor". En el diálogo "Add Processor", buscar y seleccionar UpdateAttribute. Crear una conexión entre GetFile -> UpdateAttribute arrastrando la flecha que aparece en GetFile.
 ![](./img/05_create_conn.png)
@@ -119,10 +120,18 @@ Ahora vamos a añadir el procesador **ReplaceText**. Repetimos los pasos previos
 Asegurate también de configurar correctamente las relaciones.
 ![](./img/07_config_relationship.png)
 
-Ahora vamos a trabajar con el procesador **ExecuteProcess** para correr un script de python y realizar algunas transformaciones adicionales.
+Ahora vamos a trabajar con el procesador **ExecuteStreamCommand** para correr un script de python y realizar algunas transformaciones adicionales.
+![](./img/11_ExecuteStreamCommand.png)
+Debes configurar:
 
+Command Path = ruta a tu interprete de python.
 
-* Fase de carga: Se utilizará el procesador **PutFile**.
+Command Arguments = ruta a tu script de python.
+
+Por último agrega las conexiones.
+
+### Fase de carga
+Se utilizará el procesador **PutFile**.
 Ahora procedemos a guardar el archivo transformado en un ```CSV```. Para esto, arrastra el procesador **PutFile**.
 
 ![](./img/08_add_PutFile.png)
@@ -131,6 +140,7 @@ Configuraciones básicas: En la pestaña **RELATIONSHIPS** asegúrate de que las
 
 ![](./img/08_config_processor.png)
 
+## Resultados
 Nuestro proceso ETL se ve así desde Apache Nifi:
 
 ![](./img/09_workflow.png)
