@@ -119,6 +119,9 @@ Ahora vamos a añadir el procesador **ReplaceText**. Repetimos los pasos previos
 Asegurate también de configurar correctamente las relaciones.
 ![](./img/07_config_relationship.png)
 
+Ahora vamos a trabajar con el procesador **ExecuteProcess** para correr un script de python y realizar algunas transformaciones adicionales.
+
+
 * Fase de carga: Se utilizará el procesador **PutFile**.
 Ahora procedemos a guardar el archivo transformado en un ```CSV```. Para esto, arrastra el procesador **PutFile**.
 
@@ -133,7 +136,7 @@ Nuestro proceso ETL se ve así desde Apache Nifi:
 ![](./img/09_workflow.png)
 
 Y podemos verificar las transformaciones realizadas:
-![](./img/10_transform_data.png)
+![](./img/11_transform_data.png)
 
 Junto con el timestamp que configuramos:
 ![](./img/10_attr_modified.png)

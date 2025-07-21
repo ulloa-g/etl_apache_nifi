@@ -1,5 +1,7 @@
+#!/usr/bin/env python3
 import pandas as pd
-
+import sys
+import io
 
 def extract(path):
     df = pd.read_csv(path)
@@ -13,7 +15,13 @@ def transform(df):
     return df
 
 
+def load(df):
+    df.to_csv(sys.stdout, index=False, lineterminator='\n')
+
+
 if __name__ == "__main__":
-    path_to_data = "/home/gabriel/repos/etl_apache_nifi/input/data.csv"
-    raw_df = extract(path_to_data)
+    csv_content = sys.stdin.read()
+    csv_data = io.StringIO(csv_content)
+    raw_df = extract(csv_data)
     cleaned_df = transform(raw_df)
+    load(cleaned_df)
