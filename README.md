@@ -121,6 +121,7 @@ Asegurate también de configurar correctamente las relaciones.
 
 Ahora vamos a trabajar con el procesador **ExecuteProcess** para correr un script de python y realizar algunas transformaciones adicionales.
 
+Ahora vamos a trabajar con el procesador **ExecuteProcess** para correr un script de python y realizar algunas transformaciones adicionales.
 
 * Fase de carga: Se utilizará el procesador **PutFile**.
 Ahora procedemos a guardar el archivo transformado en un ```CSV```. Para esto, arrastra el procesador **PutFile**.
